@@ -1,0 +1,128 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 50px;
+  overflow: hidden;
+}
+
+.content {
+  text-align: center;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  letter-spacing: 8px;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  color: var(--color-white);
+}
+
+.highlight {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-primary);
+  text-stroke: 2px var(--color-primary);
+}
+
+.description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+  line-height: 1.8;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  padding: 15px 40px;
+  background: var(--color-primary);
+  color: var(--color-dark);
+  border: 2px solid var(--color-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.btnPrimary:hover {
+  background: transparent;
+  color: var(--color-primary);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+.btnOutline {
+  padding: 15px 40px;
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.btnOutline:hover {
+  background: var(--color-white);
+  color: var(--color-dark);
+}
+
+.scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-white);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--color-primary), transparent);
+  animation: scrollPulse 2s infinite;
+}
+
+@keyframes scrollPulse {
+  0%,
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleY(0.5);
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 25px;
+  }
+}

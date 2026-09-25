@@ -1,0 +1,72 @@
+.hero {
+  position: relative;
+  padding: 160px 70px 60px;
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.crumb {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 40px;
+}
+
+.crumb a {
+  color: var(--color-white);
+  transition: color 0.3s;
+}
+
+.crumb a:hover {
+  color: var(--color-primary);
+}
+
+.sep {
+  margin: 0 10px;
+  color: var(--color-primary);
+}
+
+.center {
+  text-align: center;
+}
+
+.subtitle {
+  letter-spacing: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-weight: 900;
+  color: var(--color-white);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  line-height: 1.9;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.line {
+  width: 80px;
+  height: 3px;
+  background: var(--color-primary);
+  margin: 28px auto 0;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 130px 25px 40px;
+  }
+}

@@ -1,0 +1,208 @@
+.page {
+  width: 100%;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 0 25px 50px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filterBtn {
+  padding: 10px 22px;
+  background: var(--color-glass);
+  border: 1px solid var(--color-glass-border);
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-arabic);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filterBtn:hover {
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.activeFilter {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-dark);
+  font-weight: 600;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 26px;
+  padding: 0 70px 80px;
+}
+
+.card {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--color-glass-border);
+  background: var(--color-gray);
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.cardInner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+.cardInner img:hover {
+  filter: brightness(0.6);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent 55%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 26px;
+  transform: translateY(14px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.category {
+  color: var(--color-primary);
+  font-size: 0.82rem;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--color-white);
+}
+
+.view {
+  margin-top: 12px;
+  color: var(--color-white);
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all 0.4s ease 0.1s;
+}
+
+.card:hover .view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Empty state */
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.empty i {
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.lightboxInner {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  background: var(--color-gray);
+  border: 1px solid var(--color-glass-border);
+}
+
+.lightboxInner img {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: cover;
+}
+
+.lightboxMeta {
+  padding: 22px;
+}
+
+.lightboxMeta h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-white);
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-glass-border);
+  background: var(--color-darker);
+  color: var(--color-white);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.close:hover {
+  background: var(--color-primary);
+  color: var(--color-dark);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 0 25px 60px;
+  }
+
+  .filters {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}

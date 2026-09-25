@@ -1,0 +1,147 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 50px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: padding 0.4s ease, background-color 0.4s ease, backdrop-filter 0.4s;
+}
+
+.scrolled {
+  background: rgba(5, 5, 5, 0.9);
+  backdrop-filter: blur(20px);
+  padding: 15px 50px;
+  border-bottom: 1px solid var(--color-glass-border);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo span {
+  color: var(--color-primary);
+}
+
+.logoIcon {
+  color: var(--color-primary);
+}
+
+.links {
+  display: flex;
+  gap: 40px;
+}
+
+.links a {
+  color: var(--color-white);
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s;
+}
+
+.activeLink {
+  color: var(--color-primary) !important;
+}
+
+.activeLink::after {
+  width: 100% !important;
+}
+
+.links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.links a:hover {
+  color: var(--color-primary);
+}
+
+.links a:hover::after {
+  width: 100%;
+}
+
+.toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.toggle span {
+  width: 30px;
+  height: 2px;
+  background: var(--color-white);
+  transition: all 0.3s;
+}
+
+.toggle span:nth-child(2).open {
+  opacity: 0;
+}
+
+.toggle span:nth-child(1).open {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.toggle span:nth-child(3).open {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--color-darker);
+  z-index: 999;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 25px;
+  }
+
+  .scrolled {
+    padding: 12px 25px;
+  }
+
+  .links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: var(--color-darker);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    transition: right 0.4s ease;
+    z-index: 1000;
+  }
+
+  .links.active {
+    right: 0;
+  }
+
+  .toggle {
+    display: flex;
+  }
+}
